@@ -46,6 +46,8 @@
         - Speed - Medium
         - Anim - AggresivePatrol_Walk, AggresivePatrol_LookAround
         
+        (+) . Aggresive Patrol 상태에서 Combat 상태로 12초 이내 미변경시 다시 Patrol 상태로 전환
+        
         ⇒ Question Mark
         
     - **Suspicion [시야 내에 플레이어 존재 && 시야 내에 플레이어 지속 2초 이내]**
@@ -63,7 +65,7 @@
         
         ⇒ Exclamation Mark
         
-        ⇒ 플레이어를 놓치고 10초간 주위를 배회한 뒤 다시 Patrol State로 변경 
+        ⇒ 플레이어를 놓치면 10초간 Aggresive Patrol 상태로 유지 후 다시 Patrol 상태로 변경 
         
 - **공격**
     - 권총 사격
@@ -84,8 +86,8 @@
 ### <Boss>
 
 - **Enenmy+**
-- Anim - Idle_Sitting
-- Patrol - 여러 층 번갈아가며 움직임(Idle_Wait 좀 더 길게 가져감)
+- Anim - + Idle_Sitting
+- Patrol - + 여러 층 번갈아가며 움직임(Idle_Wait 좀 더 길게 가져감)
 
 - **상태**
     - **Patrol [Default]**
@@ -94,6 +96,9 @@
     - **Aggresive Patrol [(총격, 폭발음 감지 OR 시신 발견) AND 플레이어 발견 못 함]**
         - Speed - Medium
         - Anim - AggresivePatrol_Walk, AggresivePatrol_LookAround
+        
+        (+) . Aggresive Patrol 상태에서 Combat 상태로 12초 이내 미변경시 다시 Patrol 상태로 전환
+        
     - **Combat [시야 내에 플레이어 존재]**
         - Speed - Medium
         - Enemy_Armed
@@ -103,38 +108,127 @@
         - 각 개체별 지정된 타깃 포인트 순회하며 이동
         - 각 타깃 포인트에서 잠시 멈추며 주위 둘러보는 애니메이션 재생
     - **플레이어 발견 시** (Patrol State → Combat State)
-        - Enemy 시야 범위 내에(Suspicion State On) 2초 이상 머무를 시 쫒아와서 공격 시작
-        - Unarmed Enemy는 주먹 공격 / Armed Enemy는 사격 공격
+        - Boss 시야 범위 내에 Player 존재시 즉시 쫒아와서 공격 시작
+        - 사격 공격
     - **Enemy 시신 발견 시** (Patrol State →  Aggresive Patrol state)
-        - Enemy 시야 범위 내에 Enemy 시신 발견 시 Combat 상태가 되며 주변 수색
+        - Combat 시야 범위 내에 Enemy 시신 발견 시 Aggresive Patrol 상태가 되며 주변 수색
     - **총격 사운드 감지 시** (Patrol State → Aggresive Patrol state)
         - 총격 사운드 범위 내에 있는 모든 Enemy는 총격 사운드가 플레이된 위치로 모두 달려감
 
 ## [레벨 구성]
 
-- **Start Point**
-    - 건물의 입구에서
+- **Start Point(주차장) ⇒ 플레이 연습 장소**
+    - 건물의 입구 부근 주차장에서 시작
+        - 입구를 지키는 Enemy 존재 → 처치하기 쉬운 상태로 배치 ⇒ Patrol 제거한 연습용 Enemy
+        - Enemy 시신 숨길 수 있는 수풀 존재 → 연습
+- **1층 ⇒ 쉬운 난이도**
+    - 탁 트인 공간
+        - Enemy들의 움직임을 들키지 않고 관찰할 수 있는 상황 조성 필요
+    - Silencer 입구 근처에 배치
+        - 1층에서 모든 Enemy 처치 케이스 경험 가능하게 만들기
+    - Enemy 적은 수 배치 (2~4)
+        - (예정) 암살 기능 연습
+        - Silencer 장착된 권총으로 킬 해도 거의 들키지 않게끔
+        - 시체 방치시 Aggresive Patrol 적용되게 만듬(거의 적은 공간)
+            - 테이블 같은 곳 뒤에 숨기게끔 유도
+            - 밖으로 나가서 숨겨도 안들키게끔 설정
+- **2층 ⇒ 중간 난이도**
+    - 총기 사용시 들킬 위험 아주 높아지게 설정
+    - 시체 숨기기 위한 장소 따로 마련(작은 창고) ⇒ 약간 티나게
+        - Enemy Patrol 불가능한 장소
+    - 가스통 배치
+        - 다른 프롭들과 다르게 약간의 이펙트 적용
+            - 상호 작용할 수 있을 것 같은 느낌을 주는게 목적
+- **3층 ⇒ 보스방 포함된 공간**
+    - 구조 약간 더 복잡하게 설정
+    - 보스는 본인방에서부터 3층 내부만 돌아다님
+    - 가능한 보스 킬 상황
+        - 가스통 (1개)
+            - 배치는 여러 개를 하되 1개의 특정 위치의 가스통 근처로만 이동하게 설정
+        - 권총
+            - 보스에게 총을 쏘기 약간 어렵게 맵 구성
+                - 다가가기까지 여러 Enemy 배치
+
+- **End Point(= Start Point)**
+    - 처음 시작된 장소에 주차된 차 옆에 Exit Point 표시해둠
+    - Exit Point에 Player가 도달하면
 
 ## [오브젝트]
 
 **<플레이어가 소지 및 사용>**
 
-- **Coin**
+- **Coin (Max 3)**
     - 적을 유인하는 용도
         - Enemy의 좁은 반경 내(같은 층에만 적용)에 떨어지면 Enemy가 그 쪽으로 이동함
     - 다시 주워서 사용 가능
-- **Bouncy Ball**
+- **Bouncy Ball (Max 1)**
     - 적을 유인하는 용도
         - Enemy의 좁은 반경 내(같은 층에만 적용)에 떨어지면 Enemy가 그 쪽으로 이동함
     - 다시 주워서 사용 가능
+- **Gun**
+    - 적을 공격하는 용도
+        - 소유하는 범위
+            - 총격 사운드 → 소음기 장착시 범위 줄이기
+            - 유효 사격 거리
+- **Silencer**
+    - Gun에 장착하여 총격 사운드 범위를 줄여주는 용도
+    - 획득시 자동으로 총기에 장착됨
 
 **<플레이어와 상호 작용>**
 
 - **Explosive Barrel**
     - 총을 쏴서 맞추면 일정 반경에 폭파
-        - 중간 반경 내에 Enemy, Player 있으면 사망처리
-        - 넓은 반경 내에 있는
-- 
+        - 소유하는 범위
+            - 중간 반경 : Enemy, Player, Boss 사망처리
+            - 넓은 반경 : Enemy, Boss Aggresive Patrol 상태로 전환
+
+## [필요한 에셋 목록]
+
+### <Object>
+
+- **Environment**
+    - Building
+        - 금주 Fab 무료 공사장 프롭 활용 예정
+    - Box → 적 시신 숨기는 용도
+    - 기타 건물 내부 조경 프롭들
+- **Gun**
+- **Explosive Barrel**
+
+### <Animation>
+
+- **Common**
+    - Idle_Stand, LookAround, Walk, Run, Idle_ArmedStand, ArmedWalk, ArmedRun, Shoot, Die(or To Ragdoll),
+        - (예정) Punch, Door_Open, Door_Close(Or Make Door To Screen Door)
+- **Player**
+    - Player_Idle_Crounch, Player_CrounchWalk, Player_Throw(Coin, Bouncy Ball)
+        - (예정) Player_AssainateBack
+- **Enemy**
+    - Enemy_ScratchHead (When Enter Suspicion State / Can be replaced)
+- **Boss**
+    - Sitting
+
+### <Sound>
+
+- **Environment**
+    - BGM
+    - Game End(Success)
+    - Game End(Failed)
+    - (예정) Door Open/Close Sound
+- **Characters**
+    - Player Walking
+    - Player Damaged
+    - Player Dying
+    - Enemy Dying
+    - Enemy Start Aggresive Patrol
+    - Enemy Start Combat
+    - Boss Start Aggresive Patrol
+    - Boss Start Combat
+- **Objects**
+    - Gun Fire(No Silencer)
+    - Gun Fire(With Silencer)
+    - Coin Falled
+    - Bouncy Ball Falled
+    - Explosive Barrel Exploded
 
 ## [사용할 에셋 목록]
 
@@ -142,7 +236,7 @@
 
 [https://www.mixamo.com/#/?page=1&type=Character](https://www.mixamo.com/#/?page=1&type=Character)
 
-- 주인공 : Leonardo, Brian
+- 주인공 : Brian
 - 적 :  Adam
 - 보스 : Crypto
 
