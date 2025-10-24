@@ -1,0 +1,13 @@
+<간트 차트>
+- https://www.notion.so/2961f95b0c2a80a49e47fe50602e2d7c
+- https://www.notion.so/Gantt-Chart-2961f95b0c2a80af9b74ddbc08093ebb
+- https://www.notion.so/2961f95b0c2a80e6ab99edd79633b6e5
+
+<Notion Page to github md>
+- https://github.com/ega4432/notion-to-markdown-action
+- https://github.com/Gabriella439/notion-to-markdown
+
+[Mixamo]
+다시 한 번 찾아볼 목록
+- Farming Pack
+- Locomotion Pack
