@@ -34,6 +34,9 @@ jobs:
           NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
           DATE_SUFFIX: ${{ github.event.inputs.date_suffix || secrets.DATE_SUFFIX }}
 
+      - name: Cleanup old default redirect files
+        run: rm -f docs/page-*.html
+
       - name: Build redirect HTML pages into docs/ (friendly names)
         run: npm run build:html
         env:
