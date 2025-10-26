@@ -1,0 +1,61 @@
+name: Sync Notion to GitHub (redirect + friendly names)
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_message:
+        description: "Custom commit message (leave blank to use default)"
+        required: false
+        default: ""
+      date_suffix:
+        description: "Override date suffix (MMDD). Leave blank to use KST today."
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - run: npm ci
+
+      - name: Generate Markdown into docs/
+        run: npm run sync:notion:multi
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
+          DATE_SUFFIX: ${{ github.event.inputs.date_suffix || secrets.DATE_SUFFIX }}
+
+      - name: Build redirect HTML pages into docs/ (friendly names)
+        run: npm run build:html
+        env:
+          NOTION_PUBLIC_URLS: ${{ secrets.NOTION_PUBLIC_URLS }}
+          NOTION_PUBLIC_NAMES: ${{ secrets.NOTION_PUBLIC_NAMES }}
+
+      - name: Build docs/index.html
+        run: npm run build:index
+
+      - name: Commit & Push if changed
+        env:
+          INPUT_COMMIT_MESSAGE: ${{ github.event.inputs.commit_message }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            MSG="${INPUT_COMMIT_MESSAGE}"
+            if [ -z "$MSG" ]; then
+              DATE="$(date -u +'%Y-%m-%d %H:%M UTC')"
+              MSG="chore: sync notion (run #${GITHUB_RUN_NUMBER} @ ${DATE})"
+            fi
+            git commit -m "$MSG"
+            git push
+          fi

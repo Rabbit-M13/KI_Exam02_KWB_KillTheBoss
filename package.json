@@ -1,0 +1,14 @@
+{
+  "name": "notion-sync",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync:notion:multi": "node scripts/notion-sync-multi.js",
+    "build:html": "node scripts/notion-build-html.js",
+    "build:index": "node scripts/build-index.js"
+  },
+  "dependencies": {
+    "@notionhq/client": "^2.2.14",
+    "notion-to-md": "^3.1.3"
+  }
+}
