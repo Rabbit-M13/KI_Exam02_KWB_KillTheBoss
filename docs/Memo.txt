@@ -1,1 +1,11 @@
-
+[Player Key Setting - 'IMC_Main_Player']
+- Move		: wasd
+- Run		: LShift
+- Crouch	: LCtrl
+- Pickup	: F
+- Attack	: MouseLB
+- Assatinate	: G
+- Drag		: T
+- WeaponSwapF	: Q & MouseScrollUp
+- WeaponSwapB	: E & MouseScrollDown
+- AttackZoom	: MouseRB
