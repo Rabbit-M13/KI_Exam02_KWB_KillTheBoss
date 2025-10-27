@@ -9,3 +9,6 @@
 - WeaponSwapF	: Q & MouseScrollUp
 - WeaponSwapB	: E & MouseScrollDown
 - AttackZoom	: MouseRB
+
+[구현 방법]
+1. Crouch => ABP에서 State 추가
