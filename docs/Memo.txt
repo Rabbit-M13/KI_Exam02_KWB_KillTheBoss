@@ -4,7 +4,7 @@
 - Crouch	: LCtrl
 - Pickup	: F
 - Attack	: MouseLB
-- Assatinate	: G
+- Assasinate	: G
 - Drag		: T
 - WeaponSwapF	: Q & MouseScrollUp
 - WeaponSwapB	: E & MouseScrollDown
