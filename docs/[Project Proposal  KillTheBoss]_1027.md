@@ -7,11 +7,14 @@
 ### <Player>
 
 - **컨트롤**
-    - 앞뒤좌우, 웅크리기, 웅크리고 움직이기
+    - 앞뒤좌우, 달리기, 웅크리기, 웅크리고 움직이기
         - 점프는 구현하지 않을 예정 → 갈 수 있는 곳과 못 가는 곳 명확한 구분을 위해
+    - 물건 줍기(동전, 탱탱볼, 소음기 등)
+    - (예정) 끌기(Enemy 시체)
     - (예정)(미정) 구르기 기능 고민 필요
     - (예정) 근접 공격
     - (예정) 암살 공격
+    - (예정) 주위 스캔
 - **공격**
     - 권총 사격
     - (예정) 근접 공격 (주먹)
@@ -54,7 +57,7 @@
 
     - **Suspicion [시야 내에 플레이어 존재 && 시야 내에 플레이어 지속 2초 이내]**
         - **Patrol+** (Patrol에 몇 가지 b변수 추가로 상태 전환)
-        - Anim - Idle_ScratchHead(변경 가능)
+        - Anim - Idle_ScratchHead(변경 가능) ⇒
 
         ⇒ Question Mark
 
@@ -233,6 +236,21 @@
     - Bouncy Ball Falled
     - Explosive Barrel Exploded
 
+## [각종 세팅 값 저장]
+
+
+**<Default Camer Location>**
+
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3fd1f95b-0c2a-814d-a4f4-00034e29ede8/8cf3d176-310b-462f-8835-52b81ef977e3/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SY6QZXWH%2F20251027%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251027T090304Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDLZ%2FWDlFKwwqF10rRqKMmhDWW33IOq5TRSBMmuMTAI7AIhAKCpA6J4n%2B4k144ro6VP6EcLt8bAw%2FbUeE2owYobir1JKogECKH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgzK56Fa6u8hBs7WYuYq3AMxse46uI7ZevssD%2BH5uRa35NuyJJRyQC4wiBN3kw%2Bvm%2Fdqg16T%2Bp%2BrKIDoyosCnVkMSM4Q%2Fdp9K7Z0jujgzIPiyEqijXwPYY4CXSXpCkTtDJOpHydIsRj%2F1VNXZvG16EB%2BPPrFxHmkFkOoUogU2U%2BhskbIFLOsPyTlQAUbrfjKp21dgX4ybLOcLsFC8K8zolisPOpWv60AirOTau7p68EoUx05n7VV9%2FclyxnBiCjyoy%2FrCVAoTpFvy1uuNKji1FougbQrfrBJuiIJfOM%2FcFILxXCdy7Up2010MMfAwOGARQoCZ%2F%2BVY2YbRKuDAihKWC7rGSqMDhkALXhjA95ttMimCmQ0mor9tOfPmlmOD%2BOWlr5PnMNO8fD%2BjggifYivbiS1qsm1E2ffLd1yKbqOVg%2Fjn1AOIasqldBKNOcFSIyA79JaCPI4exhx4k3eIMVcLcXoMINHcskF6KM4OZXBLcxZP5iO7pGAw1uFJUxUghOyuuQe0X5Frgv9%2FXUmKOfrDa3vjq5Tf6F0cVyVhm59NtP7Xw9YhemA%2FQ8ybkiCaeKfgIeDg4rOBMf98Xtr%2F3w5vNC%2B9ayJUQOpKzAFHt4ljkr71wR%2FITJftgHVl8jdxEHycMskanUKBLToBWsz2zC2yvzHBjqkAcysq5xQBomtqDc%2F%2FMJZHQTon5c6n5hXaCqNRkfZ5YEnlj0CDsEtZAIVAfPxuZwLdwwuMo0vuFUYp1M%2BnXtp1GoivKyJ7veC%2BHK%2FY18iOkIPRdLOuAZB4JCOX3FFB9mD5BeXiYOchqOAQyd8QTGO1uOZygtyXnSwE5BRNDUJGCcXjcFtY%2Bx%2Bsbz9jTjTvS7KbNRqE1qJ3reTu57wplbn4e%2FCOpOL&X-Amz-Signature=ff2038fb0dd12343bd68c72b38e43e3bddb6d4bed9eb60a193d7200af764af6b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+
+**<(예비) Zoomed Camera Location>**
+
+
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3fd1f95b-0c2a-814d-a4f4-00034e29ede8/42cf42b1-6fa4-4368-934f-28207c567ba6/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SY6QZXWH%2F20251027%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251027T090304Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDLZ%2FWDlFKwwqF10rRqKMmhDWW33IOq5TRSBMmuMTAI7AIhAKCpA6J4n%2B4k144ro6VP6EcLt8bAw%2FbUeE2owYobir1JKogECKH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgzK56Fa6u8hBs7WYuYq3AMxse46uI7ZevssD%2BH5uRa35NuyJJRyQC4wiBN3kw%2Bvm%2Fdqg16T%2Bp%2BrKIDoyosCnVkMSM4Q%2Fdp9K7Z0jujgzIPiyEqijXwPYY4CXSXpCkTtDJOpHydIsRj%2F1VNXZvG16EB%2BPPrFxHmkFkOoUogU2U%2BhskbIFLOsPyTlQAUbrfjKp21dgX4ybLOcLsFC8K8zolisPOpWv60AirOTau7p68EoUx05n7VV9%2FclyxnBiCjyoy%2FrCVAoTpFvy1uuNKji1FougbQrfrBJuiIJfOM%2FcFILxXCdy7Up2010MMfAwOGARQoCZ%2F%2BVY2YbRKuDAihKWC7rGSqMDhkALXhjA95ttMimCmQ0mor9tOfPmlmOD%2BOWlr5PnMNO8fD%2BjggifYivbiS1qsm1E2ffLd1yKbqOVg%2Fjn1AOIasqldBKNOcFSIyA79JaCPI4exhx4k3eIMVcLcXoMINHcskF6KM4OZXBLcxZP5iO7pGAw1uFJUxUghOyuuQe0X5Frgv9%2FXUmKOfrDa3vjq5Tf6F0cVyVhm59NtP7Xw9YhemA%2FQ8ybkiCaeKfgIeDg4rOBMf98Xtr%2F3w5vNC%2B9ayJUQOpKzAFHt4ljkr71wR%2FITJftgHVl8jdxEHycMskanUKBLToBWsz2zC2yvzHBjqkAcysq5xQBomtqDc%2F%2FMJZHQTon5c6n5hXaCqNRkfZ5YEnlj0CDsEtZAIVAfPxuZwLdwwuMo0vuFUYp1M%2BnXtp1GoivKyJ7veC%2BHK%2FY18iOkIPRdLOuAZB4JCOX3FFB9mD5BeXiYOchqOAQyd8QTGO1uOZygtyXnSwE5BRNDUJGCcXjcFtY%2Bx%2Bsbz9jTjTvS7KbNRqE1qJ3reTu57wplbn4e%2FCOpOL&X-Amz-Signature=4d36ddd819c88597d1225a7ab855cc37b5cada6b4f87a88c64b1d1af64f8847f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+
 ## [사용할 에셋 목록]
 
 
@@ -260,26 +278,31 @@
 
 ## [해결해야 할 것들]
 
-1. Static Mesh와 Skeleton Mesh의 차이점
+1. ~~Static Mesh와 Skeleton Mesh의 차이점~~
 
     → Static Mesh는 절대 안움직은 애(동상이나 못 움직이는 건물 등) / Skeleton Mesh : 뼈대(Skeleton)와 Mesh 정점이  합쳐져 있는 것(무겁다 → 게임 내에서 반드시 움직임이 구현되어야 하는 애들만 사용)
 
-2. Skeleton Mesh와 Skeleton의 차이점
+2. ~~Skeleton Mesh와 Skeleton의 차이점~~
 
     → 뼈대에 Mesh가 붙어있는냐 아니냐
 
-3. Skeleton Mesh와 Skeleton 중 어떤 걸 Static Mesh로 만들어야 하는가?
+3. ~~Skeleton Mesh와 Skeleton 중 어떤 걸 Static Mesh로 만들어야 하는가?~~
 
     → Skeleton에는 Mesh가 없어요. Skeleton Mesh는 있어요.
 
-4. 소캣 만드는 방법
+4. ~~소캣 만드는 방법~~
 
     → Skeleton Mesh 파일에 오른쪽 ‘스켈레톤 트리’ 창에서 붙이고 싶은 뼈대에 붙이고 세부 조절 필요
 
-5. Unreal 내부에서 텍스처 수정하는 방법 or 필터 적용법
+5. ~~Unreal 내부에서 텍스처 수정하는 방법 or 필터 적용법~~
 
     → 구분되어 있지 않으면 방법이 없음. 포토샵 같은 파일로 열어서 수정 후 다시 적용해야함
 
+6. Player에게 InventoryMap 변수 부여하고 아이텝 픽업 기능 구현
+
+    ![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3fd1f95b-0c2a-814d-a4f4-00034e29ede8/6221a178-2bc4-4e12-a9c0-c6a24f513905/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466XOOB4HXQ%2F20251027%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251027T090323Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCsoSPzy%2B9qdReG08pc59MmwTaXRuG4aPcZnyo2i7bDVQIhANaG8dCJQD7AsuskfwuxxYD7EC7P%2Blp6WEU450vW4PgpKogECKH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgxLweiuxYFaVsltURcq3APPBPRhSHwAfMud4J7qdS4%2FD9c%2FtEhgLTmzHPnINHUNoWchKFCOD9RrX%2FhdNidT07X1wz8n%2FWEjQDSdkotuKnJMNjBaRHgYj7jNajyTyMgwhsipXMPth%2BUHOHX7qbbunwHC%2BXXtyZ4QBohs3GQ0xIF1q19of7RP1NWvpa1YQz%2FwXHUqXeP1lCmV5H1B2PrRk31Pktr5%2BDK99QaWeHkeVaJMycEVoGVHtMz%2BgqHHbijbeeID8lD%2F9UF3kA2bz3hIfLmhy%2FbYgV35vIMvHe%2BBgRpsa334DF7hPlIFJddWnz0iRCQtjwknAdT3DJ97txc3krcdXlFbbQOobRjOcNHuD%2FrDK%2FBt6HJ2UEgk%2BanpL9CeYpp2QfHu7%2FspO3uOean3V2h7qa9v8uiInsm4EpKRU2DXOmgCsT5m4Fr4VIsCiVbYFefdDsNwM8sS4GJoSuwmpaodOzoRCjAD4l7aWigNPok7Bp2CLxPX5CMjtIm%2FcRMKL60aF5tXHCEU7pcrmUY%2FuH0mETtfcTEznq99Wy8qMIW8afQxSh%2FELnJjMNNN86LQntAeRtuVHtQJDNgqMFUAd0IeNtFbM4nmH6TE5TQoAq6hxaOFpJDLWS8u%2BFJAs8mSvb0WrlPGfAuGiFbaOjC0yvzHBjqkARZZT0EzAMHVjZxghqtrbR4%2B0WpSvU4m%2F73Yn%2FMAfpQb69H%2BY8kEktVkSbdn8a9K%2FyBkCG2aBkQKQAyUTSoNpvQSAdO7wACfdLhvLQ3qxggKSG%2FLwxwMD0FmSnjw%2BFhg4HNc5JAxw%2FdtWK4nFY9p8ACIsKzKVErHLPt0fN6gWLT2XV9%2Bv4%2BgYVF9u22CZMCfYgvajMokeXRSi13FvtWkC6VoRY6s&X-Amz-Signature=4692a70e5dea9dde75dacc0b4d35bfaaa6b2c1317d74675ce769abc86b9f6844&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+
+7. 
 
 ## [에셋 수정 필요한 부분]
 
@@ -287,13 +310,13 @@
 <Gun_Untitled>
 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3fd1f95b-0c2a-814d-a4f4-00034e29ede8/a458cfb6-d2d3-464f-8e5c-b9cc7aa108ae/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466XVLS4UZ2%2F20251026%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251026T181619Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBbrY2ryHYv2I5toLkrBG7CVLB1QRForWYREb%2BY2Hh9%2FAiEAz8kbm4SumHM7SJjUb8%2BCS%2FxKDLsCPRNijb4cjkre88cqiAQIk%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDHX%2BU9R%2FKn%2FbbP9T3CrcA9GNBGfkHOSmsv2r0yhr5gFlxqDH2KKzz7TWhx62w4E5F%2FJfO3KJ3dG%2FqMQbb7Tk49p2i3Gk3Xhs%2F5Uy7fC7F020PX031nITVs4riWPOPlzlkgbyxhjyL9%2FrD7%2BBhbSDocq5EuDILbfHJloc8CvEfCBqFBs1rfi1R3s4YKinGb1dQf7w1F4VjRlPkZl2oh6v%2BSrU6KFD5AQ384rO06eATcZVm4EYXc3ZKuyTqsVRgQt5qd5Tpa2H%2F6fmVGLj4PWtw5TfTrYU%2Bx52UC%2FFuyPrKSKQxQhJdlFMQ7hUQ6BRPxGqKZg5ydo0Mtv4xV%2BG77414LI8uyxxW0WOTf2lpsI1O6LD5IpPvvR7KTqXp4x10CKbE8jz%2BcG7os%2FnyQF9SumWbrfHGM5i03PMJOB7gi30LeC17LhN8aEh1sOK6CLWWSdnVTg%2FFKEoAhhuU9hCKDI9HXoj57lDPYtc734Fsyaafk6Nb4vqBUymo8Ac04OTLxmhkx%2Bzfp2500B8%2BccoOlJg4SYi0yyzCjY0EUeAVoIUyY3EWRLxRfhz68WKQHQedp4mKdyv1x5YzGg2XzGtBgIByjGubMg8PHbLJ3BIf3Qyy%2BxTA0AlRUkOOYH6tCMKbZH9emMhF4nIlg4cucFTMNLB%2BccGOqUB0VWaCWMsG5ngC%2F%2BfrFBTg0dNxSIUduZInP%2BAvFWjbkxHxAS6BT7fxnrKEHfwTqDuhg%2BLKfebuOUalK2vXH2Z3kR4pkOuPc4j1X%2FTVaduuDIoGIn791gGzyh5Cm321SIzgyngF31nm%2BEvcZUzUB%2Bjq%2B2TkNrf9XGpVNVYmkxDhNHzt40uXcgGwZD1kGtYkgtquP10lx10Sn0SLo6XLVeaLRa%2BgTI2&X-Amz-Signature=9c086916df50c812eca8cd1c403d15074d7a33852e8af05faad6b9e455b564a0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3fd1f95b-0c2a-814d-a4f4-00034e29ede8/a458cfb6-d2d3-464f-8e5c-b9cc7aa108ae/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SY6QZXWH%2F20251027%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251027T090304Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDLZ%2FWDlFKwwqF10rRqKMmhDWW33IOq5TRSBMmuMTAI7AIhAKCpA6J4n%2B4k144ro6VP6EcLt8bAw%2FbUeE2owYobir1JKogECKH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgzK56Fa6u8hBs7WYuYq3AMxse46uI7ZevssD%2BH5uRa35NuyJJRyQC4wiBN3kw%2Bvm%2Fdqg16T%2Bp%2BrKIDoyosCnVkMSM4Q%2Fdp9K7Z0jujgzIPiyEqijXwPYY4CXSXpCkTtDJOpHydIsRj%2F1VNXZvG16EB%2BPPrFxHmkFkOoUogU2U%2BhskbIFLOsPyTlQAUbrfjKp21dgX4ybLOcLsFC8K8zolisPOpWv60AirOTau7p68EoUx05n7VV9%2FclyxnBiCjyoy%2FrCVAoTpFvy1uuNKji1FougbQrfrBJuiIJfOM%2FcFILxXCdy7Up2010MMfAwOGARQoCZ%2F%2BVY2YbRKuDAihKWC7rGSqMDhkALXhjA95ttMimCmQ0mor9tOfPmlmOD%2BOWlr5PnMNO8fD%2BjggifYivbiS1qsm1E2ffLd1yKbqOVg%2Fjn1AOIasqldBKNOcFSIyA79JaCPI4exhx4k3eIMVcLcXoMINHcskF6KM4OZXBLcxZP5iO7pGAw1uFJUxUghOyuuQe0X5Frgv9%2FXUmKOfrDa3vjq5Tf6F0cVyVhm59NtP7Xw9YhemA%2FQ8ybkiCaeKfgIeDg4rOBMf98Xtr%2F3w5vNC%2B9ayJUQOpKzAFHt4ljkr71wR%2FITJftgHVl8jdxEHycMskanUKBLToBWsz2zC2yvzHBjqkAcysq5xQBomtqDc%2F%2FMJZHQTon5c6n5hXaCqNRkfZ5YEnlj0CDsEtZAIVAfPxuZwLdwwuMo0vuFUYp1M%2BnXtp1GoivKyJ7veC%2BHK%2FY18iOkIPRdLOuAZB4JCOX3FFB9mD5BeXiYOchqOAQyd8QTGO1uOZygtyXnSwE5BRNDUJGCcXjcFtY%2Bx%2Bsbz9jTjTvS7KbNRqE1qJ3reTu57wplbn4e%2FCOpOL&X-Amz-Signature=a5c8d69dc0bc39cf4e72d8e4a81ba4ee2899b752203f9522c3944c47cd0d9c12&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3fd1f95b-0c2a-814d-a4f4-00034e29ede8/ea399bd5-26ab-4ea6-87a6-adb5fdba54fb/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466XVLS4UZ2%2F20251026%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251026T181619Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBbrY2ryHYv2I5toLkrBG7CVLB1QRForWYREb%2BY2Hh9%2FAiEAz8kbm4SumHM7SJjUb8%2BCS%2FxKDLsCPRNijb4cjkre88cqiAQIk%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDHX%2BU9R%2FKn%2FbbP9T3CrcA9GNBGfkHOSmsv2r0yhr5gFlxqDH2KKzz7TWhx62w4E5F%2FJfO3KJ3dG%2FqMQbb7Tk49p2i3Gk3Xhs%2F5Uy7fC7F020PX031nITVs4riWPOPlzlkgbyxhjyL9%2FrD7%2BBhbSDocq5EuDILbfHJloc8CvEfCBqFBs1rfi1R3s4YKinGb1dQf7w1F4VjRlPkZl2oh6v%2BSrU6KFD5AQ384rO06eATcZVm4EYXc3ZKuyTqsVRgQt5qd5Tpa2H%2F6fmVGLj4PWtw5TfTrYU%2Bx52UC%2FFuyPrKSKQxQhJdlFMQ7hUQ6BRPxGqKZg5ydo0Mtv4xV%2BG77414LI8uyxxW0WOTf2lpsI1O6LD5IpPvvR7KTqXp4x10CKbE8jz%2BcG7os%2FnyQF9SumWbrfHGM5i03PMJOB7gi30LeC17LhN8aEh1sOK6CLWWSdnVTg%2FFKEoAhhuU9hCKDI9HXoj57lDPYtc734Fsyaafk6Nb4vqBUymo8Ac04OTLxmhkx%2Bzfp2500B8%2BccoOlJg4SYi0yyzCjY0EUeAVoIUyY3EWRLxRfhz68WKQHQedp4mKdyv1x5YzGg2XzGtBgIByjGubMg8PHbLJ3BIf3Qyy%2BxTA0AlRUkOOYH6tCMKbZH9emMhF4nIlg4cucFTMNLB%2BccGOqUB0VWaCWMsG5ngC%2F%2BfrFBTg0dNxSIUduZInP%2BAvFWjbkxHxAS6BT7fxnrKEHfwTqDuhg%2BLKfebuOUalK2vXH2Z3kR4pkOuPc4j1X%2FTVaduuDIoGIn791gGzyh5Cm321SIzgyngF31nm%2BEvcZUzUB%2Bjq%2B2TkNrf9XGpVNVYmkxDhNHzt40uXcgGwZD1kGtYkgtquP10lx10Sn0SLo6XLVeaLRa%2BgTI2&X-Amz-Signature=ba7b4270a12ee7771752654a6f06a63767194573220080f2a0766518970adbd3&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3fd1f95b-0c2a-814d-a4f4-00034e29ede8/ea399bd5-26ab-4ea6-87a6-adb5fdba54fb/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SY6QZXWH%2F20251027%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251027T090304Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDLZ%2FWDlFKwwqF10rRqKMmhDWW33IOq5TRSBMmuMTAI7AIhAKCpA6J4n%2B4k144ro6VP6EcLt8bAw%2FbUeE2owYobir1JKogECKH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgzK56Fa6u8hBs7WYuYq3AMxse46uI7ZevssD%2BH5uRa35NuyJJRyQC4wiBN3kw%2Bvm%2Fdqg16T%2Bp%2BrKIDoyosCnVkMSM4Q%2Fdp9K7Z0jujgzIPiyEqijXwPYY4CXSXpCkTtDJOpHydIsRj%2F1VNXZvG16EB%2BPPrFxHmkFkOoUogU2U%2BhskbIFLOsPyTlQAUbrfjKp21dgX4ybLOcLsFC8K8zolisPOpWv60AirOTau7p68EoUx05n7VV9%2FclyxnBiCjyoy%2FrCVAoTpFvy1uuNKji1FougbQrfrBJuiIJfOM%2FcFILxXCdy7Up2010MMfAwOGARQoCZ%2F%2BVY2YbRKuDAihKWC7rGSqMDhkALXhjA95ttMimCmQ0mor9tOfPmlmOD%2BOWlr5PnMNO8fD%2BjggifYivbiS1qsm1E2ffLd1yKbqOVg%2Fjn1AOIasqldBKNOcFSIyA79JaCPI4exhx4k3eIMVcLcXoMINHcskF6KM4OZXBLcxZP5iO7pGAw1uFJUxUghOyuuQe0X5Frgv9%2FXUmKOfrDa3vjq5Tf6F0cVyVhm59NtP7Xw9YhemA%2FQ8ybkiCaeKfgIeDg4rOBMf98Xtr%2F3w5vNC%2B9ayJUQOpKzAFHt4ljkr71wR%2FITJftgHVl8jdxEHycMskanUKBLToBWsz2zC2yvzHBjqkAcysq5xQBomtqDc%2F%2FMJZHQTon5c6n5hXaCqNRkfZ5YEnlj0CDsEtZAIVAfPxuZwLdwwuMo0vuFUYp1M%2BnXtp1GoivKyJ7veC%2BHK%2FY18iOkIPRdLOuAZB4JCOX3FFB9mD5BeXiYOchqOAQyd8QTGO1uOZygtyXnSwE5BRNDUJGCcXjcFtY%2Bx%2Bsbz9jTjTvS7KbNRqE1qJ3reTu57wplbn4e%2FCOpOL&X-Amz-Signature=6c806a6f4c3e75d0a0bb6956634be6ab3331c98006e4b59f446e921b251910a5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3fd1f95b-0c2a-814d-a4f4-00034e29ede8/2a7ab0d3-5ca4-4a36-b015-4d1a14bcf502/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466XVLS4UZ2%2F20251026%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251026T181619Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBbrY2ryHYv2I5toLkrBG7CVLB1QRForWYREb%2BY2Hh9%2FAiEAz8kbm4SumHM7SJjUb8%2BCS%2FxKDLsCPRNijb4cjkre88cqiAQIk%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDHX%2BU9R%2FKn%2FbbP9T3CrcA9GNBGfkHOSmsv2r0yhr5gFlxqDH2KKzz7TWhx62w4E5F%2FJfO3KJ3dG%2FqMQbb7Tk49p2i3Gk3Xhs%2F5Uy7fC7F020PX031nITVs4riWPOPlzlkgbyxhjyL9%2FrD7%2BBhbSDocq5EuDILbfHJloc8CvEfCBqFBs1rfi1R3s4YKinGb1dQf7w1F4VjRlPkZl2oh6v%2BSrU6KFD5AQ384rO06eATcZVm4EYXc3ZKuyTqsVRgQt5qd5Tpa2H%2F6fmVGLj4PWtw5TfTrYU%2Bx52UC%2FFuyPrKSKQxQhJdlFMQ7hUQ6BRPxGqKZg5ydo0Mtv4xV%2BG77414LI8uyxxW0WOTf2lpsI1O6LD5IpPvvR7KTqXp4x10CKbE8jz%2BcG7os%2FnyQF9SumWbrfHGM5i03PMJOB7gi30LeC17LhN8aEh1sOK6CLWWSdnVTg%2FFKEoAhhuU9hCKDI9HXoj57lDPYtc734Fsyaafk6Nb4vqBUymo8Ac04OTLxmhkx%2Bzfp2500B8%2BccoOlJg4SYi0yyzCjY0EUeAVoIUyY3EWRLxRfhz68WKQHQedp4mKdyv1x5YzGg2XzGtBgIByjGubMg8PHbLJ3BIf3Qyy%2BxTA0AlRUkOOYH6tCMKbZH9emMhF4nIlg4cucFTMNLB%2BccGOqUB0VWaCWMsG5ngC%2F%2BfrFBTg0dNxSIUduZInP%2BAvFWjbkxHxAS6BT7fxnrKEHfwTqDuhg%2BLKfebuOUalK2vXH2Z3kR4pkOuPc4j1X%2FTVaduuDIoGIn791gGzyh5Cm321SIzgyngF31nm%2BEvcZUzUB%2Bjq%2B2TkNrf9XGpVNVYmkxDhNHzt40uXcgGwZD1kGtYkgtquP10lx10Sn0SLo6XLVeaLRa%2BgTI2&X-Amz-Signature=64d02f6e4d7b74c232f0cadad75b4b45682bca6d9f950de67063d3d7addec384&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
+![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/3fd1f95b-0c2a-814d-a4f4-00034e29ede8/2a7ab0d3-5ca4-4a36-b015-4d1a14bcf502/image.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SY6QZXWH%2F20251027%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20251027T090304Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEOj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDLZ%2FWDlFKwwqF10rRqKMmhDWW33IOq5TRSBMmuMTAI7AIhAKCpA6J4n%2B4k144ro6VP6EcLt8bAw%2FbUeE2owYobir1JKogECKH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQABoMNjM3NDIzMTgzODA1IgzK56Fa6u8hBs7WYuYq3AMxse46uI7ZevssD%2BH5uRa35NuyJJRyQC4wiBN3kw%2Bvm%2Fdqg16T%2Bp%2BrKIDoyosCnVkMSM4Q%2Fdp9K7Z0jujgzIPiyEqijXwPYY4CXSXpCkTtDJOpHydIsRj%2F1VNXZvG16EB%2BPPrFxHmkFkOoUogU2U%2BhskbIFLOsPyTlQAUbrfjKp21dgX4ybLOcLsFC8K8zolisPOpWv60AirOTau7p68EoUx05n7VV9%2FclyxnBiCjyoy%2FrCVAoTpFvy1uuNKji1FougbQrfrBJuiIJfOM%2FcFILxXCdy7Up2010MMfAwOGARQoCZ%2F%2BVY2YbRKuDAihKWC7rGSqMDhkALXhjA95ttMimCmQ0mor9tOfPmlmOD%2BOWlr5PnMNO8fD%2BjggifYivbiS1qsm1E2ffLd1yKbqOVg%2Fjn1AOIasqldBKNOcFSIyA79JaCPI4exhx4k3eIMVcLcXoMINHcskF6KM4OZXBLcxZP5iO7pGAw1uFJUxUghOyuuQe0X5Frgv9%2FXUmKOfrDa3vjq5Tf6F0cVyVhm59NtP7Xw9YhemA%2FQ8ybkiCaeKfgIeDg4rOBMf98Xtr%2F3w5vNC%2B9ayJUQOpKzAFHt4ljkr71wR%2FITJftgHVl8jdxEHycMskanUKBLToBWsz2zC2yvzHBjqkAcysq5xQBomtqDc%2F%2FMJZHQTon5c6n5hXaCqNRkfZ5YEnlj0CDsEtZAIVAfPxuZwLdwwuMo0vuFUYp1M%2BnXtp1GoivKyJ7veC%2BHK%2FY18iOkIPRdLOuAZB4JCOX3FFB9mD5BeXiYOchqOAQyd8QTGO1uOZygtyXnSwE5BRNDUJGCcXjcFtY%2Bx%2Bsbz9jTjTvS7KbNRqE1qJ3reTu57wplbn4e%2FCOpOL&X-Amz-Signature=31f410ef341429924850467a5968f05f5f953d07917eb70a5c48d52f49227af7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject)
 
 
 ## [참조 사이트]
