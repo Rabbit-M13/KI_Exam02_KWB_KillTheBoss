@@ -1,14 +1,18 @@
 [Player Key Setting - 'IMC_Main_Player']
 - Move		: wasd
 - Run		: LShift
-- Crouch	: LCtrl
+- Crouch	: C
 - Pickup	: F
 - Attack	: MouseLB
 - Assasinate	: G
 - Drag		: T
+- AttackZoom	: MouseRB
 - WeaponSwapF	: Q & MouseScrollUp
 - WeaponSwapB	: E & MouseScrollDown
-- AttackZoom	: MouseRB
+- Scan		: LCtrl
+
 
 [구현 방법]
 1. Crouch => ABP에서 State 추가
+2. PlayerCamer => TL 사용해서 자연스럽게 화면 전환 되도록 만들기
+HumanM_Run01_Forward
