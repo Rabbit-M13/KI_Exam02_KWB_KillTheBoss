@@ -18,12 +18,15 @@
 - Neck -10
 - Head -10
 
-
 [Camera Spring Arm Setting]
 Loc : 9, 40, 30
 Length
 - Not Zoomed : 250
 - Zoomed : 100
+
+[Right Punch Socket Spawn Bone]
+- RightForeArm => RUpperArm_Trace_Socket
+- RightHandMiddle4 => RHandMiddle_Trace_Socket
 
 
 [구현 방법]
