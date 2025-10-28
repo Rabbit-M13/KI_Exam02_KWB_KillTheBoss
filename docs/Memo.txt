@@ -11,6 +11,9 @@
 - WeaponSwapB	: E & MouseScrollDown
 - Scan		: LCtrl
 
+[Camera Spring Arm Setting]
+Loc : 9, 40, 30
+
 
 [구현 방법]
 1. Crouch => ABP에서 State 추가
