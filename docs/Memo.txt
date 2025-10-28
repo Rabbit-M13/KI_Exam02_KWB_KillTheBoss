@@ -11,8 +11,19 @@
 - WeaponSwapB	: E & MouseScrollDown
 - Scan		: LCtrl
 
+[BS Crouch SKLE offset Setting]
+- Spine +20
+- Spine1 +10
+- Spine2 -50
+- Neck -10
+- Head -10
+
+
 [Camera Spring Arm Setting]
 Loc : 9, 40, 30
+Length
+- Not Zoomed : 250
+- Zoomed : 100
 
 
 [구현 방법]
