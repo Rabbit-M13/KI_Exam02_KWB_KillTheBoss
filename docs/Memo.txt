@@ -1,9 +1,9 @@
 [Player Key Setting - 'IMC_Main_Player']
 - Move		: wasd    SP: 160 -> Ene : 100(Pat)/140(Agg)
-- Run		: LShift  SP: 260 -> Ene : 240(Combat)
-- Crouch	: C
-- Pickup	: F
-- Attack	: MouseLB
+- Run			: LShift   SP: 260 -> Ene : 240(Combat)
+- Crouch		: C
+- Pickup		: F
+- Attack		: MouseLB
 - Assasinate	: G
 - Drag		: T
 - AttackZoom	: MouseRB
@@ -11,7 +11,12 @@
 - WeaponSwapB	: E & MouseScrollDown
 - Scan		: LCtrl
 
-[BS Crouch SKLE offset Setting]
+[Enemy Speed by State]
+- Patrol 	: 100
+- AggPatrol	: 140
+- Combat 	: 240
+
+[Player BS Crouch SKLE offset Setting]
 - Spine +20
 - Spine1 +10
 - Spine2 -50
