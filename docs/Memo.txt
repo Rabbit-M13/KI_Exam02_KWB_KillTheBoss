@@ -11,6 +11,9 @@
 - WeaponSwapB	: E & MouseScrollDown
 - Scan		: LCtrl
 
+[Untitled_Gun Scale Up ratio]
+- x7
+
 [Enemy Speed by State]
 - Patrol 	: 100
 - AggPatrol	: 140
