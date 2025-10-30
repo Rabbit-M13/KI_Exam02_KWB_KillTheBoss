@@ -1,7 +1,7 @@
 [Player Key Setting - 'IMC_Main_Player']
 - Move		: wasd    SP: 160 -> Ene : 100(Pat)/140(Agg)
 - Run			: LShift   SP: 260 -> Ene : 240(Combat)
-- Crouch		: C
+- Crouch		: C	    SP: 80
 - Pickup		: F
 - Attack		: MouseLB
 - Assasinate	: G
