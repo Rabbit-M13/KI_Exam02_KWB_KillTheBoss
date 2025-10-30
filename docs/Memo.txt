@@ -11,6 +11,12 @@
 - WeaponSwapB	: E & MouseScrollDown
 - Scan		: LCtrl
 
+[Pistol Used Material List]
+- Malha_002
+- Material_534
+- Capsula_001
+- Plastico_001
+
 [Untitled_Gun Scale Up ratio]
 - x7
 
