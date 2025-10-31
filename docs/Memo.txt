@@ -11,6 +11,10 @@
 - WeaponSwapB	: E & MouseScrollDown
 - Scan		: LCtrl
 
+[Niagara Particle System For Muzzle Fire Life Cycle]
+- 0.25
+  => Gun cool time Needs at least 0.5s (for safety)
+
 [Pistol Used Material List]
 - Malha_002
 - Material_534
