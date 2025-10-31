@@ -11,6 +11,10 @@
 - WeaponSwapB	: E & MouseScrollDown
 - Scan		: LCtrl
 
+[Pistol Ammo Config]
+- TotalAmmo : No limmit
+- MaxMag : 7
+
 [Niagara Particle System For Muzzle Fire Life Cycle]
 - 0.25
   => Gun cool time Needs at least 0.5s (for safety)
