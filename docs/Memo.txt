@@ -1,4 +1,5 @@
 [Player Key Setting - 'IMC_Main_Player']
+- Debug Keys	: 1 - GunEquip / 2 - SilencerEquip
 - Move		: wasd    SP: 160 -> Ene : 100(Pat)/140(Agg)
 - Run			: LShift   SP: 260 -> Ene : 240(Combat)
 - Crouch		: C	    SP: 80
