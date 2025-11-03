@@ -12,6 +12,9 @@
 - WeaponSwapB	: E & MouseScrollDown
 - Scan		: LCtrl
 
+[Enmey Sus InSight Config]
+- 2s => 5s
+
 [Pistol Ammo Config]
 - TotalAmmo : No limmit
 - MaxMag : 7
