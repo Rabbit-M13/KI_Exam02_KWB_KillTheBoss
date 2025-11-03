@@ -77,3 +77,4 @@ DerivedDataCache/*
 # Node.js
 node_modules/
 **/node_modules/
+Content/OtherPackages/CityKitBR_V4/BrasileirissesCommon/Textures/Skybox/T_HDRI_3.uasset
