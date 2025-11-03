@@ -12,6 +12,8 @@
 - WeaponSwapB	: E & MouseScrollDown
 - Scan		: LCtrl
 
+[Memo for test]
+
 [Enmey Sus InSight Config]
 - 2s => 5s
 
