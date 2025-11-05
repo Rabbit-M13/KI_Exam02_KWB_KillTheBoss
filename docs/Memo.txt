@@ -12,6 +12,9 @@
 - WeaponSwapB	: E & MouseScrollDown
 - Scan		: LCtrl
 
+[InGame DirectionalLight Rotation]
+200 / 32 / -410
+
 [Enemy Attack Range]
 - Punch : 105
 - Pistol
