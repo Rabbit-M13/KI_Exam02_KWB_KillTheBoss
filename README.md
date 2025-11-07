@@ -3,7 +3,7 @@
 
 ### 조작키
 - 이동 : WASD
-- 공격 : MouseRB
+- 공격 : MouseLB
 - 달리기 : LShift
 - 웅크리기 : C
 - 총 장착 : 1
